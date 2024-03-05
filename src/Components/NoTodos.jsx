@@ -19,7 +19,7 @@ export default function NoTodos() {
             rx="25"
             transform="rotate(-26.4746 28 180.487)"
             fill="white"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           />
           <rect
             x="28.6705"
@@ -29,10 +29,10 @@ export default function NoTodos() {
             rx="24.5"
             transform="rotate(-26.4746 28.6705 180.712)"
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-dasharray="2 4 6 8"
-            shape-rendering="crispEdges"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="2 4 6 8"
+            shapeRendering="crispEdges"
           />
           <rect
             x="27.3295"
@@ -43,8 +43,8 @@ export default function NoTodos() {
             transform="rotate(-26.4746 27.3295 180.262)"
             fill="white"
             stroke="black"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <rect
             x="50.3536"
@@ -63,7 +63,7 @@ export default function NoTodos() {
             d="M147.739 111.358C154.358 108.061 157.255 100.183 154.028 93.7027C150.801 87.2226 142.768 84.7876 136.148 88.0843C129.529 91.381 126.632 99.2592 129.859 105.739C133.086 112.219 141.119 114.654 147.739 111.358Z"
             fill="white"
             stroke="#D3D3D3"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </g>
         <g filter="url(#filter1_d_0_1)">
@@ -74,7 +74,7 @@ export default function NoTodos() {
             height="392"
             rx="25"
             fill="white"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           />
           <rect
             x="174.5"
@@ -83,10 +83,10 @@ export default function NoTodos() {
             height="391"
             rx="24.5"
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-dasharray="2 4 6 8"
-            shape-rendering="crispEdges"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="2 4 6 8"
+            shapeRendering="crispEdges"
           />
           <rect
             x="173.5"
@@ -96,8 +96,8 @@ export default function NoTodos() {
             rx="25.5"
             fill="white"
             stroke="black"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <rect
             x="192"
@@ -115,7 +115,7 @@ export default function NoTodos() {
             d="M312 130.5C319.395 130.5 325.5 124.739 325.5 117.5C325.5 110.261 319.395 104.5 312 104.5C304.605 104.5 298.5 110.261 298.5 117.5C298.5 124.739 304.605 130.5 312 130.5Z"
             fill="white"
             stroke="#D3D3D3"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </g>
         <defs>
@@ -126,9 +126,9 @@ export default function NoTodos() {
             width="430.706"
             height="482.379"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -161,9 +161,9 @@ export default function NoTodos() {
             width="287"
             height="437"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
