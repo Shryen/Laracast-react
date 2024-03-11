@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import '../App.css';
 import NoTodos from './NoTodos';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
+import { useEffect } from 'react';
 
 function App() {
   const [todos, setTodos] = useState([]);
-
+  const [name, setName] = useState('');
+  const nameInputEl = useRef(null);
   const [idForTodo, setIdForTodo] = useState(4);
 
   function addTodo(todo) {
@@ -101,10 +103,36 @@ function App() {
     setTodos([...todos].filter(todo => todo.id !== id));
   }
 
+  // use useMemo when something has a return value and to get that return value takes a long time
+
+  useEffect(() => {
+    nameInputEl.current.focus();
+
+    return function cleanup() {
+      // console.log('cleanup');
+    };
+  }, []);
+
   return (
     <div className="todo-app-container">
       <div className="todo-app">
-        <h2>Todo App</h2>
+        <h1>Todo App</h1>
+        <hr />
+        <div className="name-container">
+          <h2>What is your name?</h2>
+          <form action="#">
+            <input
+              type="text"
+              ref={nameInputEl}
+              name="username"
+              className="todo-input"
+              placeholder="What is your name?"
+              value={name}
+              onChange={event => setName(event.target.value)}
+            />
+          </form>
+          {name && <p className="name-label">Hello, {name}</p>}
+        </div>
         <TodoForm addTodo={addTodo} />
         {todos.length > 0 ? (
           <TodoList
