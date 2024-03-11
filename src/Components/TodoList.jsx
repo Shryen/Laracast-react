@@ -4,9 +4,12 @@ import TodoClearCompleted from './TodoClearCompleted';
 import TodoCompleteAll from './TodoCompleteAll';
 import TodoFilters from './TodoFilters';
 import { useState } from 'react';
+import useToggle from '../hooks/useToggle';
 
 export default function TodoList(props) {
   const [filter, setFilter] = useState('all');
+  const [oneVisible, setOneVisible] = useToggle();
+  const [twoVisible, setTwoVisible] = useToggle(false);
 
   return (
     <>
@@ -71,22 +74,34 @@ export default function TodoList(props) {
         ))}
       </ul>
 
-      <div className="check-all-container">
-        <TodoCompleteAll completeAllTodos={props.completeAllTodos} />
-
-        <TodoItemsRemaining remaining={props.remaining} />
+      <div className="toggles-container">
+        <button className="button" onClick={setOneVisible}>
+          Features One Toggle
+        </button>
+        <button className="button" onClick={setTwoVisible}>
+          Features Two Toggle
+        </button>
       </div>
+      {oneVisible && (
+        <div className="check-all-container">
+          <TodoCompleteAll completeAllTodos={props.completeAllTodos} />
 
-      <div className="other-buttons-container">
-        <TodoFilters
-          todosFiltered={props.todosFiltered}
-          filter={filter}
-          setFilter={setFilter}
-        />
-        <div>
-          <TodoClearCompleted clearCompleted={props.clearCompleted} />
+          <TodoItemsRemaining remaining={props.remaining} />
         </div>
-      </div>
+      )}
+
+      {twoVisible && (
+        <div className="other-buttons-container">
+          <TodoFilters
+            todosFiltered={props.todosFiltered}
+            filter={filter}
+            setFilter={setFilter}
+          />
+          <div>
+            <TodoClearCompleted clearCompleted={props.clearCompleted} />
+          </div>
+        </div>
+      )}
     </>
   );
 }
