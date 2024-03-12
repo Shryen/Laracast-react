@@ -6,6 +6,7 @@ import TodoList from './TodoList';
 import { useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { TodosContext } from '../Context/TodosContext';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 function App() {
   const [todos, setTodos] = useLocalStorage('todos', []);
@@ -52,8 +53,10 @@ function App() {
         <div className="todo-app">
           <h1>Todo App</h1>
           <hr />
+
           <div className="name-container">
             <h2>What is your name?</h2>
+
             <form action="#">
               <input
                 type="text"
@@ -65,10 +68,43 @@ function App() {
                 onChange={handleNameInput}
               />
             </form>
-            {name && <p className="name-label">Hello, {name}</p>}
+            <CSSTransition
+              in={name.length > 0}
+              timeout={300}
+              classNames="slide-horizontal"
+              unmountOnExit
+            >
+              <p className="name-label">Hello, {name}</p>
+            </CSSTransition>
           </div>
+
           <TodoForm />
-          {todos.length > 0 ? <TodoList /> : <NoTodos />}
+          <SwitchTransition mode="out-in">
+            <CSSTransition
+              key={todos.length > 0}
+              timeout={300}
+              classNames={'slide-vertical'}
+              unmountOnExit
+            >
+              {todos.length > 0 ? <TodoList /> : <NoTodos />}
+            </CSSTransition>
+          </SwitchTransition>
+          {/* <CSSTransition
+            in={todos.length > 0}
+            timeout={300}
+            classNames={'slide-vertical'}
+            unmountOnExit
+          >
+            <TodoList />
+          </CSSTransition>
+          <CSSTransition
+            in={todos.length === 0}
+            timeout={300}
+            classNames={'slide-vertical'}
+            unmountOnExit
+          >
+            <NoTodos />
+          </CSSTransition> */}
         </div>
       </div>
     </TodosContext.Provider>

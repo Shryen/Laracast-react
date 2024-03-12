@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background: #f3f4f6;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,18 +14,18 @@ body {
 
 .todo-app-container {
   min-height: 100vh;
-  background: #f3f4f6;
 }
 
 .container {
   margin: auto;
-  padding-top: 24px;
+  padding-top: 2rem;
   max-width: 48rem;
 }
 
 .todo-app {
   margin: auto;
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 2rem;
   background: white;
   border-radius: 0.25rem;
